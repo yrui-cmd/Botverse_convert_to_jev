@@ -1,0 +1,21 @@
+{
+  "output_name_suffix": "-jev",
+  "max_map_repair_rounds": 2,
+  "max_repair_rounds": 3,
+  "jev": {
+    "threshold_high": 0.8,
+    "threshold_low": 0.2,
+    "batch_same_state_questions": true,
+    "on_unavailable": "mark_unverified",
+    "on_undecided": "narrow_then_review_llm"
+  },
+  "source_protection": {
+    "read_only": true,
+    "hash_algorithm": "sha256",
+    "abort_on_mutation": true
+  },
+  "benchmark": {
+    "rerun_only_affected_cases_after_patch": true,
+    "minimum_smoke_cases": 6
+  }
+}

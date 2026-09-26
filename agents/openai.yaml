@@ -1,0 +1,4 @@
+interface:
+  display_name: "Botverse Convert to Jev"
+  short_description: "为现有 Skill 增量加入 Jev 判断"
+  default_prompt: "请给我指定的 Skill 增量加入 Jev 判断，保留原 Skill，并完成节点分工、适配、验证和报告。"

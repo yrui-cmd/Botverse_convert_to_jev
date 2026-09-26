@@ -1,0 +1,32 @@
+{
+  "gate_id": "example_gate",
+  "state_fields": ["spec", "artifact"],
+  "questions": {
+    "satisfies": {
+      "type": "boolean",
+      "instructions": "Does the artifact fully satisfy the supplied spec?",
+      "criteria": {
+        "true": "All required behavior is present and consistent with the spec.",
+        "false": "At least one required behavior is missing or contradicted."
+      }
+    },
+    "overreaches": {
+      "type": "boolean",
+      "instructions": "Does the artifact add unsupported behavior beyond the supplied spec?",
+      "criteria": {
+        "true": "It adds behavior not supported or requested by the spec.",
+        "false": "It stays within the supported/requested scope."
+      }
+    },
+    "quality": {
+      "type": "score",
+      "instructions": "Rate readiness against the supplied spec.",
+      "criteria": ["unusable", "major repair", "minor repair", "ready"]
+    }
+  },
+  "actions": {
+    "pass": "advance",
+    "fail": "targeted_llm_repair",
+    "undecided": "narrow_once_then_review_llm"
+  }
+}

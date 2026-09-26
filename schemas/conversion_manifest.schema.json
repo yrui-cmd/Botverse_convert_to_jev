@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Botverse additive convert-to-Jev manifest",
+  "type": "object",
+  "required": ["source", "destination", "status"],
+  "properties": {
+    "source": {
+      "type": "object",
+      "required": ["path", "snapshot"],
+      "properties": {
+        "path": {"type": "string"},
+        "snapshot": {"type": "object"}
+      }
+    },
+    "destination": {
+      "type": "object",
+      "required": ["path"],
+      "properties": {"path": {"type": "string"}}
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "IN_PROGRESS",
+        "VERIFIED_READY",
+        "NEEDS_REPAIR",
+        "UNVERIFIED_JEV_UNAVAILABLE",
+        "BLOCKED_DEPENDENCY",
+        "FAILED_STATIC_CHECK",
+        "SOURCE_MUTATION_DETECTED"
+      ]
+    },
+    "checks": {"type": "object"},
+    "repairs": {"type": "array"}
+  }
+}
